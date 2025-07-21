@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Liste des équipements</h2>
+<table>
+    <tr>
+        <th>Marque</th><th>Modèle</th><th>S/N</th><th>Fin garantie</th><th>Fin de vie</th>
+    </tr>
+    {% for device in object_list %}
+    <tr>
+        <td>{{ device.brand }}</td>
+        <td>{{ device.model }}</td>
+        <td>{{ device.serial_number }}</td>
+        <td>{{ device.warranty_end_date|default:"-" }}</td>
+        <td>{{ device.end_of_life_date|default:"-" }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
