@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Tableau de bord</h1>
+<ul>
+    <li>{{ device_count }} équipements enregistrés</li>
+    <li>{{ maintenance_count }} maintenances enregistrées</li>
+    <li>{{ obsolete_count }} équipements obsolètes</li>
+</ul>
+<p><a href="{% url 'device_list' %}">Voir la liste des équipements</a></p>
+{% endblock %}
